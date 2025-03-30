@@ -38,8 +38,8 @@ class ApplyAttanController extends Controller
 
             $sql = DB::table('mra_claims')->insert([
                 'date' => $request->datestart,
-                'purpose' => $request->purpose_wfh,
-                'details' => $request->details_wfh,
+                'purpose' => $request->purpose_outstation,
+                'details' => $request->details_outstation,
                 'amount' => $request->amount,
                 'noic' => $ic
             ]);

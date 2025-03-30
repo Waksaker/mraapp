@@ -178,7 +178,7 @@
                                 <sup><font style="color:red">*Please Choose Name Staff</font></sup>
                             </div>
                             <div class="col-sm-4" style="display: none;">
-                                <input type="date" class="form-control mb-3" id="date" name="date" value="">
+                                <input type="date" class="form-control mb-3" id="date" name="date" value="{{ $date }}">
                             </div>
                         </div>
                         <br>

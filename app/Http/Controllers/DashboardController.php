@@ -70,7 +70,7 @@ class DashboardController extends Controller
         ];
 
         $outstation = DB::table('mra_outstation')
-                    ->selectRaw("MONTH(dateapply) as month, COUNT(datestart) as total")
+                    ->selectRaw("MONTH(datestart) as month, COUNT(datestart) as total")
                     ->whereYear('dateapply', $Year_now)
                     ->where('ic', $ic)
                     ->groupBy('month')
