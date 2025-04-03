@@ -118,7 +118,7 @@
         <span class="user-profile"><img src="{{ asset('assets/images/user-1.jpg')}}" class="img-circle" alt="user avatar"></span>
       </a>
       <ul class="dropdown-menu dropdown-menu-right">
-        <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
+        <li class="dropdown-item"><i class="icon-settings mr-2"></i> Profile</li>
         <li class="dropdown-divider"></li>
         <li class="dropdown-item"><a href="{{ route('showlogin') }}"><i class="icon-power mr-2"></i> Logout</a></li>
       </ul>
