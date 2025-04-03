@@ -12,6 +12,7 @@ use App\Http\Controllers\ApplyClaimController;
 use App\Http\Controllers\ApplyAttanController;
 use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,7 @@ Route::post('/download-mp3', [MusicController::class, 'downloadMP3'])->name('dow
 Route::get('/play-audio', function () {
     return view('playmusic');
 })->name('playmusic');
+
+
+// Profile
+Route::get('/profile', [ProfileController::class, 'viewprofile'])->name('viewprofile');

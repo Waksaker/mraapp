@@ -118,7 +118,7 @@
         <span class="user-profile"><img src="{{ asset('assets/images/user-1.jpg')}}" class="img-circle" alt="user avatar"></span>
       </a>
       <ul class="dropdown-menu dropdown-menu-right">
-        <li class="dropdown-item"><i class="icon-settings mr-2"></i> Profile</li>
+        <li class="dropdown-item"><a href="{{ route('viewprofile') }}"><i class="icon-settings mr-2"></i> Profile</a></li>
         <li class="dropdown-divider"></li>
         <li class="dropdown-item"><a href="{{ route('showlogin') }}"><i class="icon-power mr-2"></i> Logout</a></li>
       </ul>
@@ -158,7 +158,7 @@
                                 <th style="text-align: center">No</th>
                                 <th style="text-align: center">Name Music</th>
                                 <th style="text-align: center">Created</th>
-                                <th style="text-align: center">#</th>
+                                <th style="text-align: center">ACTION</th>
                             </thead>
                             <tbody>
                                 @if ($musics->isEmpty())

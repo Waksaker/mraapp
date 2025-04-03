@@ -138,7 +138,7 @@
     <div class="row">
         <div class="col-12">
         <div class="card">
-            <div class="card-header">CLAIM
+            <div class="card-header">PROFILE
                 <div class="card-action">
                     <div class="dropdown">
                         <a href="" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown"></a>
@@ -147,57 +147,71 @@
             </div>
             <div class="card-body">
                 <div class="container-flex">
-                    <div align="right">
-                        <a href="{{ route('showapplyattan') }}" class="btn btn-primary py-8 fs-4 mb-4 rounded-2">Apply Attandence</a>
-                      </div>
-                    <div class="form-group row">
-                        @if(isset($success))
-                            <div class="alert alert-success">
-                                {{ $success }}
+                    <form method="POST" enctype="multipart/form-data" action="">
+                        <div class="col">
+                            <label for="datestart" class="col-sm-2 col-form-label">SIGNATURE IMAGE :</label>
+                            <input type="file" name="namefile" value="" onchange="previewImageSign(event)">
+                            <div class="container-img">
+                                <label for="input-file" id="drop-area">
+                                    <div id="img-view">
+                                        
+                                        
+                                    </div>
+                                </label>
                             </div>
-                        @endif
-                        <h1 class="col-sm-4 col-form-label">PLEASE CHOOSE</h1>
-                        <div class="col-sm-2">
-                            <select class="form-control" name="tahun" id="tahun"  value=''>
-                                @php
-                                    $tahunmin = now()->year; // Tahun semasa
-                                    $tahunmax = 2024; // Tahun maksimum
-                                @endphp
-                                @for ($i = $tahunmin; $i >= $tahunmax; $i--)
-                                    <option value="{{ $i }}" {{ old('tahun') == $i ? 'selected' : '' }}>
-                                        {{ $i }}
-                                    </option>
-                                @endfor
-                            </select>
                         </div>
-                        <div class="col-sm-2">
-                            <select class="form-control" name="kehadiran" id="kehadiran">
-                                <option value="" style="text-transform: uppercase"><?php echo 'Please Choose...' ?></option>
-                                <option value='office'>OFFICE</option>
-                                <option value='outstation'>OUTSTATION</option>
-                                <option value='wfh'>WORK FROM HOME</option>
-                            </select>
+                        <div class="customer_records">
+                            <div class="row mb-3">
+                                <input type="text" class="form-control mb-3" id="date" name="id" value="{{ $user->id ?? '-' }}" style="display: none;">
+                                <label for="datestart" class="col-sm-2 col-form-label">NAME :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-3" id="date" name="name" value="{{ $user->name ?? '-' }}">
+                                </div>
+                                <label for="datestart" class="col-sm-2 col-form-label">PASSWORD :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-1" id="password" name="password" value="{{ $user->password ?? '-' }}">
+                                </div>
+                                <label for="dateend" class="col-sm-2 col-form-label">EMAIL :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-1" id="purpose" name="email" value="{{ $user->email ?? '-' }}">
+                                </div>
+                                <label for="datestart" class="col-sm-2 col-form-label">IC :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-3" id="date" name="ic" value="{{ $user->icno ?? '-' }}">
+                                </div>
+                                <label for="dateend" class="col-sm-2 col-form-label">POSITION :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-1" id="purpose" name="position" value="{{ $user->position ?? '-' }}">
+                                </div>
+                                <label for="datestart" class="col-sm-2 col-form-label">PHONE NUMBER :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-3" id="date" name="number" value="{{ $user->phoneno ?? '-' }}">
+                                </div>
+                                <label for="dateend" class="col-sm-2 col-form-label">BANK NAME :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-1" id="purpose" name="bankname" value="{{ $user->bank_name ?? '-' }}">
+                                </div>
+                                <label for="datestart" class="col-sm-2 col-form-label">ACCOUNT NUMBER :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-3" id="date" name="account" value="{{ $user->acc_no ?? '-' }}">
+                                </div>
+                                <label for="datestart" class="col-sm-2 col-form-label">STATUS :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control mb-1" id="purpose" name="status" value="{{ $user->status ?? '-' }}">
+                                </div>
+                                <label for="datestart" class="col-sm-2 col-form-label">SYARIKAT :</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control mb-1" name="syarikat" id="syarikat">
+                                        <option value="MRA GLOBAL SDN BHD" {{ $user->syarikat == 'MRA GLOBAL SDN BHD' ? 'selected' : '' }}>MRA GLOBAL SDN BHD</option>
+                                        <option value="LETILICA SDN BHD" {{ $user->syarikat == 'LETILICA SDN BHD' ? 'selected' : '' }}>LETILICA SDN BHD</option>
+                                        <option value="MIM DEFENSE SDN BHD" {{ $user->syarikat == 'MIM DEFENSE SDN BHD' ? 'selected' : '' }}>MIM DEFENSE SDN BHD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3" name="submit">UPDATE</button>
                         </div>
-                        <div class="col-sm-4">
-                            <select class="form-control" name="bulan" id="bulan" onChange="getattan(this.value,{{ $user->icno }})">
-                                <option value="" style="text-transform: uppercase">Please Choose...</option>
-                                <option value='01'>JANUARY</option>
-                                <option value='02'>FEBRUARY</option>
-                                <option value='03'>MARCH</option>
-                                <option value='04'>APRIL</option>
-                                <option value='05'>MAY</option>
-                                <option value='06'>JUNE</option>
-                                <option value='07'>JULY</option>
-                                <option value='08'>AUGUST</option>
-                                <option value='09'>SEPTEMBER</option>
-                                <option value='10'>OCTOBER</option>
-                                <option value='11'>NOVEMBER</option>
-                                <option value='12'>DECEMBER</option>
-                            </select>
-                        </div>
-                        <input type="hidden" name="ic" id="ic" value="{{ $user->icno }}">
-                    </div>
-                    <div id="list"></div>
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -286,29 +300,6 @@
   <!-- Index js -->
   <script src="assets/js/index.js"></script>
   <script src="assets/libs/jquery-3.6.0.min.js"></script>
-  <script src="assets/libs/jquery.dataTables.min.js"></script>
-
-  <script>
-    function getattan() {
-        let tahun = $('#tahun').val();
-        let bulan = $('#bulan').val();
-        let attan = $('#kehadiran').val();
-        let ic = $('#ic').val();
-
-        console.log('Atta :' + attan + ' Tahun :' + tahun + ' Bulan :' + bulan + ' IC :' + ic);
-
-        $.ajax({
-            url: "{{ route('getattan') }}", // Route Laravel untuk dapatkan data
-            type: "GET",
-            data: { tahun: tahun, bulan: bulan, ic: ic, attan: attan },
-            success: function(response) {
-                $('#list').html(response); // Paparkan hasil dalam div #list
-            },
-            error: function(xhr) {
-                console.log(xhr.responseText);
-            }
-        });
-    }
-</script>
+    <script src="assets/libs/jquery.dataTables.min.js"></script>
 </body>
 </html>
