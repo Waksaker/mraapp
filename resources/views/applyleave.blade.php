@@ -30,10 +30,10 @@
 
   <style>
     option {
-        background-color: black !important;
-        color: white !important;
+        background-color: white !important;
+        color: black !important;
     }
-    select {
+    /* select {
         background-color: black !important;
         color: white !important;
         border: 1px solid #ccc !important;
@@ -44,7 +44,7 @@
     input {
         background-color: black !important;
         color: white !important;
-    }
+    } */
 </style>
 
 
@@ -159,53 +159,53 @@
                     <div class="row mb-3">
                     <label for="date" class="col-sm-2 col-form-label">DATE</label>
                     <div class="col-sm-10">
-                        <input type="date" class="form-control" id="dateapply" name="dateapply" value="{{ $date }}">
+                        <input type="date" class="form-control mb-3" id="dateapply" name="dateapply" value="{{ $date }}">
                     </div>
                     </div>
                     <div class="row mb-3">
                     <label for="name" class="col-sm-2 col-form-label">NAME</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nameapply" name="nameapply" value="{{ $user->name ?? '-' }}" readonly>
+                        <input type="text" class="form-control mb-3" id="nameapply" name="nameapply" value="{{ $user->name ?? '-' }}" readonly>
                     </div>
                     </div>
                     <div class="row mb-3">
                     <label for="noic" class="col-sm-2 col-form-label">IC NUMBER</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="noic" name="noic" value="{{ $user->icno ?? '-' }}" readonly>
+                        <input type="text" class="form-control mb-3" id="noic" name="noic" value="{{ $user->icno ?? '-' }}" readonly>
                     </div>
                     </div>
                     <div class="row mb-3">
                     <label for="position" class="col-sm-2 col-form-label">POSITION</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="position" name="position" value="{{ $user->position ?? '-' }}" readonly>
+                        <input type="text" class="form-control mb-3" id="position" name="position" value="{{ $user->position ?? '-' }}" readonly>
                     </div>
                     </div>
                     <div class="row mb-3">
                     <label for="datestart" class="col-sm-2 col-form-label">DATE APPLY</label>
                     <div class="col-sm-4">
-                        <input type="date" class="form-control" id="datestart" name="datestart">
+                        <input type="date" class="form-control mb-3" id="datestart" name="datestart">
                     </div>
                     <label for="dateend" class="col-sm-2 col-form-label">UNTIL</label>
                     <div class="col-sm-4">
-                        <input type="date" class="form-control" id="dateend" name="dateend">
+                        <input type="date" class="form-control mb-3" id="dateend" name="dateend">
                     </div>
                     </div>
                     <div class="row mb-3">
                     <label for="days" class="col-sm-2 col-form-label">DAYS</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="daysleave" name="daysleave">
+                        <input type="text" class="form-control mb-3" id="daysleave" name="daysleave">
                     </div>
                     </div>
                     <div class="row mb-3">
                     <label for="purpose" class="col-sm-2 col-form-label">PURPOSE</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="purpose" name="purpose">
+                        <input type="text" class="form-control mb-3" id="purpose" name="purpose">
                     </div>
                     </div>
                     <div class="row mb-3">
                     <label for="contactno" class="col-sm-2 col-form-label">CONTACT NO</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="contactno" name="contactno" value="{{ $user->phoneno ?? '-' }}" minlength="10" max="14">
+                        <input type="text" class="form-control mb-3" id="contactno" name="contactno" value="{{ $user->phoneno ?? '-' }}" minlength="10" max="14">
                     </div>
                     </div>
                     {{-- <div class="row mb-3">
@@ -224,7 +224,7 @@
                     <div class="row mb-3">
                     <label for="date" class="col-sm-2 col-form-label">MATTERS</label>
                     <div class="col-sm-2">
-                        <select class="form-select" id="matters" name="matters">
+                        <select class="form-control mb-3" id="matters" name="matters">
                             <option value="ANNUAL LEAVE">ANNUAL LEAVE</option>
                             <option value="MEDICAL LEAVE">MEDICAL LEAVE</option>
                             <option value="UNPAID LEAVE">UNPAID LEAVE</option>

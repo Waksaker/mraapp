@@ -41,10 +41,6 @@
         padding: 10px !important;
         border-radius: 5px !important;
     }
-    input {
-        background-color: black !important;
-        color: white !important;
-    }
 </style>
 
 
@@ -155,33 +151,27 @@
             </div>
             <div class="card-body">
                 <div class="container-flex">
-
-                    <div>
-                        {{-- <input type="text" id="youtube-url" placeholder="Masukkan URL YouTube">
-                        <input type="hidden" id="name" value="{{ $user->name }}"> --}}
-
-                        <form action="{{ route('download-mp3') }}" method="POST">
-                            @csrf  <!-- Laravel CSRF Token -->
-                            <input type="hidden" name="name" value="{{$user->name}}">
+                    {{-- <input type="text" id="youtube-url" placeholder="Masukkan URL YouTube">
+                    <input type="hidden" id="name" value="{{ $user->name }}"> --}}
+                    <form action="{{ route('download-mp3') }}" method="POST">
+                        @csrf  <!-- Laravel CSRF Token -->
+                        <input type="hidden" name="name" value="{{$user->name}}">
+                        <div class="customer_records">
                             <div class="row mb-3">
-                                <label for="noic" class="col-sm-2 col-form-label">NAME MUSIC</label>
+                                <label for="datestart" class="col-sm-2 col-form-label">NAME MUSIC :</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="savename" placeholder="Name Music">
-                                    <sup><font style="color:red">*Please Choose Name Staff</font></sup>
+                                    <input type="text" class="form-control mb-3" id="savename" name="savename" placeholder="Name Music">
                                 </div>
-                                <label for="noic" class="col-sm-2 col-form-label">LINK</label>
+                                <label for="datestart" class="col-sm-2 col-form-label">LINK :</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="url" placeholder="Masukkan URL">
-                                    <sup><font style="color:red">*Please Choose Attendance Status</font></sup>
+                                    <input type="text" class="form-control mb-1" id="url" name="url" placeholder="Masukkan URL">
                                 </div>
                             </div>
-                            <br>
-                            <button type="submit" class="btn btn-primary py-8 fs-4 mb-4 rounded-2">Muat Turun</button>
-                        </form>
+                            <button type="submit" class="btn btn-primary mt-3" name="submit">UPDATE</button>
+                        </div>
+                    </form>
 
-                        <p id="result"></p>
-                    </div>
-
+                    <p id="result"></p>
                 </div>
             </div>
         </div>

@@ -30,10 +30,10 @@
 
   <style>
     option {
-        background-color: black !important;
-        color: white !important;
+        background-color: white !important;
+        color: black !important;
     }
-    select {
+    /* select {
         background-color: black !important;
         color: white !important;
         border: 1px solid #ccc !important;
@@ -44,7 +44,7 @@
     input {
         background-color: black !important;
         color: white !important;
-    }
+    } */
 </style>
 
 
@@ -160,7 +160,7 @@
                         <div class="row mb-3">
                             <label for="noic" class="col-sm-2 col-form-label">ATTENDANCE STATUS</label>
                             <div class="col-sm-4">
-                                <select class="form-control" name="present" id="present" onchange="toggleDaysInput()">
+                                <select class="form-control mb-3" name="present" id="present" onchange="toggleDaysInput()">
                                     <option value="" style="text-transform: uppercase">Please Choose...</option>
                                     <option value="outstation">OUTSTATION</option>
                                     <option value="wfh">WORK FROM HOME</option>
@@ -169,7 +169,7 @@
                             </div>
                             <label for="noic" class="col-sm-2 col-form-label">NAME STAFF</label>
                             <div class="col-sm-4">
-                                <select class="form-control" name="name_staff" id="name_staff">
+                                <select class="form-control mb-3" name="name_staff" id="name_staff">
                                     <option value="" style="text-transform: uppercase">Please Choose...</option>
                                     @foreach ($allusr as $key => $users)
                                         <option value="{{ $users->name }}">{{ $users->name }}</option>

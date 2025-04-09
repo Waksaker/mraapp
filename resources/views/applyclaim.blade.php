@@ -28,7 +28,7 @@
 
   <link rel="stylesheet" href="{{ asset('assets/libs/jquery.dataTables.min.css')}}">
 
-  <style>
+  {{-- <style>
     option {
         background-color: black !important;
         color: white !important;
@@ -45,7 +45,7 @@
         background-color: black !important;
         color: white !important;
     }
-</style>
+</style> --}}
 
 
 </head>
