@@ -35,6 +35,7 @@ Route::get('/dashboard', [DashboardController::class, 'showdash'])->name('showda
 Route::get('/leave', [LeaveController::class, 'showleave'])->name('showleave');
 Route::get('applyleave', [ApplyLeaveController::class, 'showapplyleave'])->name('showapplyleave');
 Route::post('/applyleave', [ApplyLeaveController::class, 'applyleave'])->name('applyleave');
+Route::get('/deleteleave/{id}', [LeaveController::class, 'deleteleave'])->name('deleteleave');
 
 // Claim
 Route::get('/claim', [ClaimController::class, 'showclaim'])->name('showclaim');

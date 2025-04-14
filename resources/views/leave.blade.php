@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <meta name="description" content=""/>
   <meta name="author" content=""/>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
   <!-- loader-->
   <link href="assets/css/pace.min.css" rel="stylesheet"/>
@@ -167,7 +168,7 @@
                                                 <td style="text-align: center;">{{ $item->purpose }}</td>
                                                 <td style="text-align: center;">
                                                     <a href="" class="btn btn-primary">PRINT</a>
-                                                    <a href="" class="btn btn-danger">DELETE</a>
+                                                    <a href="{{ route('deleteleave', $item->leaveid) }}" class="btn btn-danger" onclick="return confirm('Padam data ini?')">DELETE</a>
                                                 </td>
                                             </tr>
                                         @endforeach

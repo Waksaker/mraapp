@@ -24,4 +24,13 @@ class LeaveController extends Controller
             'leave' => $leave
         ]);
     }
+
+    public function deleteleave($id)
+    {
+        $delete = DB::table('mra_leave')->where('leaveid', $id)->delete();
+        if ($delete) {
+            return redirect()->route('showleave');
+        }
+    }
+
 }

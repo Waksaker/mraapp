@@ -63,18 +63,6 @@ class ApplyLeaveController extends Controller
             return response()->json(['error' => 'Gagal menyimpan ke database!'], 500);
         }
 
-        // Ambil semula data cuti termasuk yang baru ditambah
-        $leave = DB::table('mra_leave')
-            ->where('noic', $ic)
-            ->get()
-            ->map(function ($item, $index) {
-                $item->index = $index + 1;
-                return $item;
-            });
-
-        return view('leave', [
-            'user' => $user,
-            'leave' => $leave
-        ]);
+        return redirect()->route('showleave');
     }
 }
